@@ -1,0 +1,15 @@
+import { useState } from 'react'
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, updateProfile } from 'firebase/auth'
+import { doc, setDoc, serverTimestamp } from 'firebase/firestore'
+import { auth, db, firebaseReady } from './firebase.js'
+import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
+export default function Auth(){
+ const [mode,setMode]=useState('login'),[name,setName]=useState(''),[email,setEmail]=useState(''),[password,setPassword]=useState(''),[error,setError]=useState(''),[busy,setBusy]=useState(false)
+ async function submit(e){e.preventDefault();setError('');if(!firebaseReady){setError('Firebase-এর .env ফাইলের তথ্য পূরণ করে Vite আবার চালু করুন।');return}setBusy(true);try{
+  if(mode==='signup'){const c=await createUserWithEmailAndPassword(auth,email,password);if(name.trim())await updateProfile(c.user,{displayName:name.trim()});await setDoc(doc(db,'users',c.user.uid),{displayName:name.trim(),email,createdAt:serverTimestamp()},{merge:true})}
+  else if(mode==='reset'){await sendPasswordResetEmail(auth,email);setError('পাসওয়ার্ড পরিবর্তনের লিংক ইমেইলে পাঠানো হয়েছে।');setMode('login')}
+  else await signInWithEmailAndPassword(auth,email,password)
+ }catch(e){const map={'auth/configuration-not-found':'Firebase Authentication চালু আছে কি না এবং Web app-এর config ঠিক আছে কি না পরীক্ষা করুন.','auth/invalid-credential':'ইমেইল বা পাসওয়ার্ড সঠিক নয়।','auth/email-already-in-use':'এই ইমেইলে অ্যাকাউন্ট আছে।','auth/weak-password':'কমপক্ষে ৬ অক্ষরের পাসওয়ার্ড দিন।','auth/invalid-email':'সঠিক ইমেইল লিখুন।','auth/network-request-failed':'ইন্টারনেট সংযোগ পরীক্ষা করুন।'};setError(map[e.code]||`সমস্যা হয়েছে: ${e.code||e.message}`)}finally{setBusy(false)}}
+ return <main className="auth-screen"><section className="auth-card"><img src="/logo.svg" className="auth-logo"/><span className="eyebrow">ভাষোরা</span><Link className="auth-back" to="/">মূল পাতায় ফিরুন</Link><h1>{mode==='signup'?'নতুন অ্যাকাউন্ট খুলুন':mode==='reset'?'পাসওয়ার্ড ফিরে পান':'আবার স্বাগতম'}</h1><p>সহজ বাংলায় শিখুন, বুঝুন, এগিয়ে যান।</p><form onSubmit={submit}>{mode==='signup'&&<label>আপনার নাম<input required value={name} onChange={e=>setName(e.target.value)} placeholder="নাম লিখুন"/></label>}<label>ইমেইল<input required type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="name@example.com"/></label>{mode!=='reset'&&<label>পাসওয়ার্ড<input required minLength="6" type="password" value={password} onChange={e=>setPassword(e.target.value)} placeholder="কমপক্ষে ৬ অক্ষর"/></label>}{error&&<p className="auth-error">{error}</p>}<button className="button primary auth-submit" disabled={busy}>{busy?'অপেক্ষা করুন…':mode==='signup'?'অ্যাকাউন্ট তৈরি করুন':mode==='reset'?'রিসেট লিংক পাঠান':'লগ ইন করুন'} <ArrowRight size={18}/></button></form><div className="auth-links">{mode==='login'&&<button onClick={()=>setMode('reset')}>পাসওয়ার্ড ভুলে গেছেন?</button>}<button onClick={()=>{setMode(mode==='signup'?'login':'signup');setError('')}}>{mode==='signup'?'আগে অ্যাকাউন্ট আছে? লগ ইন':'নতুন অ্যাকাউন্ট খুলুন'}</button></div></section></main>
+}
