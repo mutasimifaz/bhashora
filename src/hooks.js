@@ -36,14 +36,21 @@ function getSarvamLanguage(lang) {
     return String(lang || '').toLowerCase().startsWith('bn') ? 'bn-IN' : 'en-IN';
 }
 
-function getSarvamSpeaker(languageCode) {
+function getSarvamSpeaker(languageCode, selectedVoice = 'auto') {
+    const allowed = languageCode === 'bn-IN' ? ['roopa', 'suhani', 'rehan'] : ['ishita', 'ratan'];
+    if (selectedVoice && allowed.includes(selectedVoice)) return selectedVoice;
     // Sarvam Bulbul v3 speaker IDs recommended for Bengali and English.
     return languageCode === 'bn-IN'
         ? (import.meta.env.VITE_SARVAM_BN_SPEAKER || 'roopa')
         : (import.meta.env.VITE_SARVAM_EN_SPEAKER || 'ishita');
 }
 
-async function requestSarvamAudio(text, languageCode, signal) {
+const speechAudioCache = new Map();
+
+async function requestSarvamAudio(text, languageCode, signal, selectedVoice) {
+    const speaker = getSarvamSpeaker(languageCode, selectedVoice);
+    const cacheKey = `${languageCode}:${speaker}:${text}`;
+    if (speechAudioCache.has(cacheKey)) return speechAudioCache.get(cacheKey);
     const response = await fetch(SARVAM_TTS_URL, {
         method: 'POST',
         headers: {
@@ -54,8 +61,8 @@ async function requestSarvamAudio(text, languageCode, signal) {
             text,
             model: SARVAM_MODEL,
             language_code: languageCode,
-            speaker: getSarvamSpeaker(languageCode),
-            pace: 0.85,
+            speaker,
+            pace: 1.0,
             speech_sample_rate: 22050,
             output_audio_codec: 'wav',
         }),
@@ -79,10 +86,35 @@ async function requestSarvamAudio(text, languageCode, signal) {
     const binary = atob(encodedAudio);
     const bytes = new Uint8Array(binary.length);
     for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
-    return new Blob([bytes], { type: 'audio/wav' });
+    const blob = new Blob([bytes], { type: 'audio/wav' });
+    speechAudioCache.set(cacheKey, blob);
+    if (speechAudioCache.size > 40) speechAudioCache.delete(speechAudioCache.keys().next().value);
+    return blob;
+}
+
+const VOICE_STORAGE_KEY = 'bhashora-tts-voice';
+
+function readSavedVoice() {
+    try {
+        const saved = localStorage.getItem(VOICE_STORAGE_KEY);
+        return ['auto', 'roopa', 'suhani', 'rehan', 'ishita', 'ratan'].includes(saved) ? saved : 'auto';
+    } catch {
+        return 'auto';
+    }
 }
 
 export function useSpeech() {
+    const [selectedVoice, setSelectedVoiceState] = useState(readSavedVoice);
+
+    const setSelectedVoice = useCallback((voice) => {
+        const safeVoice = ['auto', 'roopa', 'suhani', 'rehan', 'ishita', 'ratan'].includes(voice) ? voice : 'auto';
+        setSelectedVoiceState(safeVoice);
+        try {
+            localStorage.setItem(VOICE_STORAGE_KEY, safeVoice);
+        } catch (error) {
+            console.warn('Could not save voice preference:', error);
+        }
+    }, []);
     const [listening, setListening] = useState(false);
     const [supported, setSupported] = useState(false);
     const [speechError, setSpeechError] = useState('');
@@ -91,6 +123,7 @@ export function useSpeech() {
     const audioUrlRef = useRef(null);
     const requestControllerRef = useRef(null);
     const requestIdRef = useRef(0);
+    const activeSpeechKeyRef = useRef('');
 
     useEffect(() => {
         const w = window;
@@ -119,12 +152,26 @@ export function useSpeech() {
             URL.revokeObjectURL(audioUrlRef.current);
             audioUrlRef.current = null;
         }
+        activeSpeechKeyRef.current = '';
     }, []);
 
-    const speak = useCallback(async (text, lang = 'en-IN') => {
+    const prepareSpeech = useCallback((text, lang = 'bn-BD', voiceOverride) => {
+        const languageCode = getSarvamLanguage(lang);
+        const voiceToUse = voiceOverride || selectedVoice;
+        for (const chunk of splitSpeechText(text)) {
+            requestSarvamAudio(chunk, languageCode, undefined, voiceToUse).catch((error) => console.warn('Speech prefetch failed:', error));
+        }
+    }, [selectedVoice]);
+
+    const speak = useCallback(async (text, lang = 'en-IN', voiceOverride) => {
         const chunks = splitSpeechText(text);
         if (!chunks.length) return;
+        const languageCode = getSarvamLanguage(lang);
+        const voiceToUse = voiceOverride || selectedVoice;
+        const speechKey = `${languageCode}:${voiceToUse}:${chunks.join('|')}`;
+        if (activeSpeechKeyRef.current === speechKey) { stopSpeaking(); return; }
         stopSpeaking();
+        activeSpeechKeyRef.current = speechKey;
         setSpeechError('');
 
         if (!SARVAM_API_KEY) {
@@ -135,12 +182,11 @@ export function useSpeech() {
         const requestId = requestIdRef.current;
         const controller = new AbortController();
         requestControllerRef.current = controller;
-        const languageCode = getSarvamLanguage(lang);
 
         try {
             for (const chunk of chunks) {
                 if (requestId !== requestIdRef.current) return;
-                const blob = await requestSarvamAudio(chunk, languageCode, controller.signal);
+                const blob = await requestSarvamAudio(chunk, languageCode, controller.signal, voiceToUse);
                 if (requestId !== requestIdRef.current) return;
 
                 const audioUrl = URL.createObjectURL(blob);
@@ -166,7 +212,7 @@ export function useSpeech() {
         } finally {
             if (requestId === requestIdRef.current) requestControllerRef.current = null;
         }
-    }, [stopSpeaking]);
+    }, [stopSpeaking, selectedVoice]);
 
     const listen = useCallback((onText, lang = 'bn-BD') => {
         const w = window;
@@ -219,5 +265,6 @@ export function useSpeech() {
         }
     }, []);
 
-    return { speak, listen, stopSpeaking, listening, supported, speechError };
+    const changeVoice = useCallback((voice) => { stopSpeaking(); setSelectedVoice(voice); }, [stopSpeaking, setSelectedVoice]);
+    return { speak, prepareSpeech, listen, stopSpeaking, listening, supported, speechError, selectedVoice, setSelectedVoice: changeVoice };
 }

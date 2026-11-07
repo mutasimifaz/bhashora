@@ -1,7 +1,11 @@
-import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check'
+
 import { initializeApp, getApps } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
+import {
+  initializeAppCheck,
+  ReCaptchaV3Provider
+} from 'firebase/app-check'
 import {
   getAI,
   getGenerativeModel,
@@ -31,25 +35,20 @@ export const app = firebaseReady
 // App Check must initialize before Firebase services are accessed.
 if (app) {
   try {
-    const isLocal = import.meta.env.DEV
-
-    const siteKey = import.meta.env.VITE_RECAPTCHA_V3_SITE_KEY
-
-    if (isLocal) {
-      initializeAppCheck(app, {
-        provider: new ReCaptchaV3Provider('none'),
-        isTokenAutoRefreshEnabled: true,
-      })
-    } else if (siteKey) {
-      initializeAppCheck(app, {
-        provider: new ReCaptchaV3Provider(siteKey),
-        isTokenAutoRefreshEnabled: true,
-      })
-    } else {
-      console.error('Production App Check site key is missing.')
+    if (import.meta.env.DEV) {
+      self.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
     }
+
+    initializeAppCheck(app, {
+      provider: new ReCaptchaV3Provider(
+        import.meta.env.VITE_RECAPTCHA_V3_SITE_KEY || 'none'
+      ),
+      isTokenAutoRefreshEnabled: true,
+    });
+
+    console.info('Firebase App Check initialized');
   } catch (error) {
-    console.error('Firebase App Check initialization failed:', error)
+    console.error('Firebase App Check initialization failed:', error);
   }
 }
 export const auth = app ? getAuth(app) : null

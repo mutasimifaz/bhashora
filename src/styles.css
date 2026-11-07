@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
 
 @tailwind base; @tailwind components; @tailwind utilities;
 :root{font-family:'Poppins','Hind Siliguri',sans-serif;color:#293a3a;background:#fffaf2;font-synthesis:none;text-rendering:optimizeLegibility}*{box-sizing:border-box}body{margin:0;min-width:320px;background:#fffaf2}.app-shell{min-height:100vh;background:#fffaf2}.topbar{height:78px;padding:0 max(28px,calc((100vw - 1240px)/2));display:flex;align-items:center;justify-content:space-between;background:#fffdf9;border-bottom:1px solid #f0eade;position:sticky;top:0;z-index:10}.brand{display:flex;align-items:center;gap:11px;border:0;background:none;color:#293a3a;text-align:left;cursor:pointer}.brand-mark{width:43px;height:43px;border-radius:15px;background:#2f806b;color:white;display:grid;place-items:center;font-weight:700;font-size:23px}.brand b{font-size:21px;display:block;line-height:1.2}.brand small{font-size:12px;color:#87908b}.top-actions{display:flex;align-items:center;gap:17px}.streak{background:#fff4df;color:#a7661d;border-radius:30px;padding:8px 13px;display:flex;align-items:center;gap:7px;font-size:14px}.icon-button{border:1px solid #eee8dc;background:white;border-radius:13px;width:42px;height:42px;display:grid;place-items:center;color:#68756e;cursor:pointer}.layout{max-width:1240px;margin:auto;display:grid;grid-template-columns:224px minmax(0,1fr);gap:38px;padding:32px 28px 70px}.sidebar{position:sticky;top:108px;height:calc(100vh - 130px);display:flex;flex-direction:column}.side-welcome{text-align:center;padding:10px 12px 24px;border-bottom:1px solid #eee8dc;display:flex;align-items:center;flex-direction:column;gap:4px}.avatar{width:66px;height:66px;border-radius:23px;background:#fff0d5;display:grid;place-items:center;font-size:34px;margin-bottom:7px}.side-welcome b{font-size:19px}.side-welcome span{color:#929990;font-size:14px}.sidebar nav{display:grid;gap:7px;padding-top:21px}.nav-item{border:0;background:transparent;border-radius:13px;padding:13px 14px;display:flex;align-items:center;gap:12px;color:#758078;font:inherit;font-size:16px;text-align:left;cursor:pointer}.nav-item.active{background:#eaf4ee;color:#28745f;font-weight:700}.side-note{margin-top:auto;background:#fff1e9;color:#95634f;border-radius:15px;padding:14px;display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.6}.main-content{min-width:0}.page-wrap{max-width:900px;margin:0 auto}.hero{border-radius:25px;background:linear-gradient(112deg,#e8f3e9 0%,#f4f3e7 58%,#f9e8d8 100%);padding:37px 39px;min-height:286px;display:flex;align-items:center;justify-content:space-between;overflow:hidden;position:relative}.hero-copy{max-width:500px;position:relative;z-index:1}.eyebrow{font-size:13px;color:#67917c;font-weight:700;letter-spacing:.02em}.hero h1{font-size:35px;line-height:1.45;margin:9px 0 8px;font-weight:700}.hero h1 em{font-style:normal;color:#2f806b}.hero p{font-size:16px;line-height:1.8;color:#68796e;max-width:460px;margin:0 0 20px}.button{border:0;border-radius:13px;padding:12px 19px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font:inherit;font-size:16px;font-weight:700;cursor:pointer;transition:.18s}.button:disabled{opacity:.45;cursor:not-allowed}.primary{background:#2f806b;color:white}.primary:hover{background:#256b59}.secondary{background:#f1f3ef;color:#65736a}.hero-button{background:#2f806b;color:white;padding:13px 18px}.hero-art{width:245px;height:225px;position:relative;display:grid;place-items:center;flex-shrink:0}.sun-disc{position:absolute;right:18px;top:2px;width:75px;height:75px;background:#f8d98e;border-radius:50%;display:grid;place-items:center;font-size:35px}.book-illustration{font-size:112px;filter:drop-shadow(0 12px 8px #9e987555);transform:rotate(-9deg);z-index:1}.floating-word{position:absolute;bottom:15px;left:5px;background:white;color:#2f806b;border-radius:13px;padding:9px 15px;box-shadow:0 8px 20px #536e5520;font-weight:700;transform:rotate(-5deg)}.section-heading{display:flex;justify-content:space-between;align-items:end;margin:29px 0 14px}.section-heading h2{font-size:21px;margin:2px 0 0}.soft-pill{background:#f2eee5;color:#8c877b;border-radius:30px;padding:7px 12px;font-size:13px}.task-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.task-card{background:white;border:1px solid #f0ebdf;border-radius:17px;padding:17px;text-align:left;position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-height:150px;color:#34443d;cursor:pointer;box-shadow:0 5px 20px #51422a08}.task-card:hover,.lesson-row:hover{border-color:#b8d7c5;transform:translateY(-2px)}.task-icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;font-size:22px;margin-bottom:3px}.mint-bg{background:#e7f4eb}.peach-bg{background:#fff0e6}.lilac-bg{background:#efedfa}.task-card b{font-size:16px}.task-card small{font-size:13px;color:#939a91}.task-arrow{position:absolute;right:13px;top:18px;color:#aab1aa}.text-link{border:0;background:none;color:#39816c;font:inherit;display:flex;align-items:center;cursor:pointer}.progress-card{background:white;border:1px solid #f0ebdf;border-radius:17px;padding:17px 20px;display:flex;align-items:center;gap:15px}.progress-icon{width:48px;height:48px;background:#fff2d8;color:#c18a2e;border-radius:15px;display:grid;place-items:center}.progress-copy{display:flex;flex-direction:column;gap:3px;flex:1}.progress-copy b{font-size:16px}.progress-copy span{font-size:13px;color:#939a91}.progress-card strong{color:#2f806b}.progress-track,.quiz-progress{height:8px;background:#edf0e9;border-radius:20px;overflow:hidden}.progress-track>div,.quiz-progress>div{height:100%;background:#62a985;border-radius:20px;transition:width .3s}.progress-copy .progress-track{margin-top:8px}.kind-note{margin-top:17px;padding:14px 17px;background:#fff4e8;border-radius:15px;display:flex;align-items:center;gap:12px;color:#826b4e}.kind-note>span{font-size:24px}.kind-note p{margin:0;flex:1;font-size:14px;line-height:1.7}.kind-note button{border:0;background:transparent;color:#a27e4b;cursor:pointer}.page-title{margin:8px 0 25px}.page-title h1{font-size:30px;margin:4px 0;color:#2c3c36}.page-title p{margin:0;color:#89928a;font-size:16px}.lesson-list{display:grid;gap:12px}.lesson-row{width:100%;display:flex;align-items:center;gap:15px;text-align:left;background:white;border:1px solid #f0ebdf;border-radius:17px;padding:15px 18px;cursor:pointer;transition:.18s;color:#34443d}.lesson-icon{width:55px;height:55px;border-radius:17px;display:grid;place-items:center;font-size:27px;flex-shrink:0}.lesson-icon.mint{background:#e8f3e9}.lesson-icon.peach{background:#fff0e6}.lesson-icon.lilac{background:#efedfa}.lesson-icon.blue{background:#e9f1fb}.lesson-info{display:flex;flex-direction:column;gap:3px;flex:1}.lesson-info b{font-size:17px}.lesson-info small{font-size:13px;color:#929a91}.row-chevron{color:#aab1aa}.done-mark{color:#328064;background:#e9f5ed;padding:5px 10px;border-radius:30px;font-size:13px;display:flex;gap:4px;align-items:center}.tip-card{margin-top:18px;background:#eef5ef;border-radius:14px;padding:14px 17px;display:flex;gap:10px;color:#5c7866;line-height:1.7}.back-link{border:0;background:none;color:#688174;font:inherit;display:flex;align-items:center;gap:7px;margin:0 0 15px;cursor:pointer}.lesson-card{background:white;border:1px solid #f0ebdf;border-radius:22px;padding:25px;max-width:650px;margin:auto;text-align:center;box-shadow:0 10px 30px #51422a08}.lesson-top{display:flex;justify-content:space-between;align-items:center}.time-pill{font-size:13px;color:#8c907f;background:#f6f3eb;border-radius:30px;padding:5px 10px}.lesson-card .progress-track{margin:13px 0 22px}.lesson-emoji{font-size:45px}.lesson-card h1{font-size:27px;margin:4px 0}.muted{color:#91988f;margin:0}.word-card{margin:23px 0 18px;background:#f7f8f2;border-radius:18px;padding:25px 15px}.word-card h2{font-size:34px;color:#2f806b;margin:8px 0}.bangla-meaning{font-size:20px;margin:0;color:#53685a}.pronounce{font-size:14px;color:#929a91;margin-top:7px}.listen-button{margin-top:14px;border:0;border-radius:30px;background:#e7f2e9;color:#2e8067;padding:9px 17px;display:inline-flex;align-items:center;gap:7px;font:inherit;cursor:pointer}.lesson-controls{display:flex;justify-content:space-between;gap:10px}.gentle-tip{font-size:14px;color:#a28b63;margin:17px 0 0}.game-card{max-width:600px;margin:auto;background:white;border:1px solid #f0ebdf;border-radius:22px;padding:25px;box-shadow:0 10px 30px #51422a08}.game-top{display:flex;justify-content:space-between;color:#758279;font-size:14px}.quiz-progress{margin:12px 0 25px}.quiz-emoji{text-align:center;font-size:42px}.game-card h2{text-align:center;font-size:22px;margin:7px 0 22px}.answer-list{display:grid;gap:10px}.answer-option{border:1.5px solid #e9ede6;background:#fff;border-radius:13px;padding:13px 16px;text-align:left;font:inherit;font-size:17px;color:#405047;display:flex;justify-content:space-between;cursor:pointer}.answer-option.correct{border-color:#5ba77c;background:#edf7ef;color:#27724e}.answer-option.incorrect{border-color:#e5a08b;background:#fff1ed;color:#a65c49}.answer-feedback{margin:16px 0;background:#fff2e9;color:#9a684f;padding:12px;border-radius:12px;text-align:center}.answer-feedback.good{background:#eaf5eb;color:#2d795a}.answer-feedback small{display:block;margin-top:4px}.full-button{width:100%;margin-top:13px}.help-banner{display:flex;align-items:center;gap:13px;background:#eaf4ed;padding:14px 17px;border-radius:15px;margin-bottom:15px}.help-banner>span{font-size:31px}.help-banner b{font-size:16px}.help-banner p{margin:1px 0;color:#718478;font-size:14px}.chat-panel{background:white;border:1px solid #eee9df;border-radius:20px;overflow:hidden;box-shadow:0 8px 25px #51422a08}.chat-header{padding:14px 18px;border-bottom:1px solid #f0eee8;display:flex;align-items:center;gap:11px}.bot-avatar{width:42px;height:42px;background:#eaf3ed;border-radius:14px;display:grid;place-items:center;font-size:23px}.chat-header b{display:block}.chat-header small{font-size:12px;color:#8a948b}.online-dot{display:inline-block;width:7px;height:7px;background:#5eaf7e;border-radius:50%;margin-right:5px}.chat-messages{padding:17px;min-height:260px;max-height:440px;overflow:auto;display:flex;flex-direction:column;gap:15px}.message{display:flex;gap:8px;align-items:flex-start;max-width:90%}.message.user{align-self:flex-end;flex-direction:row-reverse}.message-avatar{width:29px;height:29px;border-radius:10px;background:#f3f2e9;display:grid;place-items:center;flex-shrink:0}.bubble{background:#f2f6f1;padding:11px 13px;border-radius:4px 14px 14px 14px;color:#45574b;line-height:1.7;font-size:15px;white-space:pre-wrap}.message.user .bubble{background:#e8f2fa;border-radius:14px 4px 14px 14px}.bubble p{margin:0}.speak-reply{display:flex;align-items:center;gap:5px;margin-top:8px;border:0;background:none;color:#54806a;font:inherit;font-size:12px;cursor:pointer;padding:0}.chat-image{max-width:210px;max-height:180px;object-fit:contain;border-radius:9px;display:block;margin-bottom:7px}.typing{color:#89968c;font-size:13px;padding-left:39px}.composer{padding:13px;border-top:1px solid #f0eee8}.composer textarea{width:100%;resize:vertical;min-height:65px;border:1px solid #e8eae3;border-radius:12px;padding:11px 13px;font:inherit;font-size:15px;outline:none;color:#34443d}.composer textarea:focus{border-color:#8dbda0}.composer-actions{display:flex;align-items:center;gap:9px;margin-top:9px}.attach-button{border:1px solid #e8ede6;background:white;color:#6c7d70;border-radius:10px;padding:8px 11px;display:flex;align-items:center;gap:6px;font:inherit;font-size:13px;cursor:pointer}.recording{background:#fff0eb;color:#c66b55}.send-button{margin-left:auto;background:#2f806b;color:white;border:0;border-radius:11px;padding:10px 16px;display:flex;align-items:center;gap:8px;font:inherit;cursor:pointer}.send-button:disabled{opacity:.45;cursor:not-allowed}.image-preview{position:relative;display:inline-block;margin-bottom:9px}.image-preview img{width:75px;height:65px;object-fit:cover;border-radius:8px}.image-preview button{position:absolute;right:-6px;top:-6px;background:#39483f;color:white;border:0;border-radius:50%;width:21px;height:21px;display:grid;place-items:center;cursor:pointer}.privacy-note{display:flex;align-items:center;gap:7px;color:#92998f;font-size:12px;margin:12px 2px}.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat-card{background:white;border:1px solid #eee9df;border-radius:16px;padding:17px;display:flex;flex-direction:column;align-items:center;gap:4px}.stat-card span{font-size:25px}.stat-card b{font-size:25px;color:#2f806b}.stat-card small{color:#8b958d}.progress-detail{margin-top:20px;background:white;border:1px solid #eee9df;border-radius:17px;padding:19px}.progress-detail h3{margin:0 0 12px}.progress-line{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid #f0eee8}.progress-line:last-child{border:0}.status-done{color:#368261;font-size:13px}.status-pending{color:#a19c8e;font-size:13px}.settings-list{background:white;border:1px solid #eee9df;border-radius:17px;padding:0 18px}.setting-row{display:flex;align-items:center;gap:13px;padding:17px 0;border-bottom:1px solid #f0eee8}.setting-row:last-child{border:0}.setting-icon{font-size:24px;width:38px}.setting-row>div{flex:1;display:flex;flex-direction:column}.setting-row small{color:#8d968e;font-size:13px}.toggle{width:48px;height:27px;border:0;border-radius:20px;background:#d9ded9;padding:3px;cursor:pointer}.toggle i{width:21px;height:21px;border-radius:50%;background:white;display:block;transition:.2s}.toggle.on{background:#5a9b78}.toggle.on i{transform:translateX(21px)}.small{padding:7px 13px;font-size:14px}.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:#2f806b;color:white;padding:12px 18px;border-radius:30px;display:flex;align-items:center;gap:8px;box-shadow:0 8px 25px #263b2e33;z-index:30}.mobile-nav{display:none}.dark-mode{background:#202c29;color:#e8eee9}.dark-mode .topbar,.dark-mode .sidebar,.dark-mode .task-card,.dark-mode .progress-card,.dark-mode .lesson-row,.dark-mode .lesson-card,.dark-mode .game-card,.dark-mode .chat-panel,.dark-mode .stat-card,.dark-mode .progress-detail,.dark-mode .settings-list{background:#2b3934;color:#e8eee9;border-color:#3d4a43}.dark-mode .brand,.dark-mode .page-title h1,.dark-mode .task-card,.dark-mode .lesson-row{color:#e8eee9}.dark-mode .hero{background:linear-gradient(112deg,#304b3d,#4a4939)}.dark-mode .word-card,.dark-mode .bubble{background:#35463d;color:#e8eee9}.dark-mode .composer textarea{background:#35463d;color:white;border-color:#53645a}.dark-mode .composer{background:#2b3934}.dark-mode .answer-option{background:#35463d;color:#e8eee9;border-color:#53645a}.dark-mode .nav-item.active{background:#3a5949;color:#b8e0c7}.dark-mode .section-heading h2{color:#e8eee9}
@@ -542,3 +542,135 @@ body { background: var(--bh-cream); color: var(--bh-ink); }
 @media (max-width: 850px) {
   .sidebar { display: none !important; }
 }
+
+
+/* Persistent Sarvam voice selector beside reply playback */
+.speak-controls {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+.voice-select {
+  min-height: 34px;
+  max-width: 190px;
+  padding: 5px 28px 5px 9px;
+  border: 1px solid var(--border, #d9e4df);
+  border-radius: 9px;
+  background: var(--surface, #fff);
+  color: var(--text, #24332d);
+  font: inherit;
+  font-size: 0.82rem;
+}
+.voice-select:focus-visible {
+  outline: 2px solid var(--primary, #16836b);
+  outline-offset: 2px;
+}
+
+/* Language preference and English typography */
+/* Public website is Bengali-only; English mode has been removed. */
+.public-site { font-family: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif; }
+.language-icon-button { width: 48px; min-width: 48px; height: 48px; display: inline-grid; place-items: center; padding: 0; }
+.clear-chat-button { margin-left: auto; width: 38px; height: 38px; border: 1px solid #e6ece7; border-radius: 11px; background: #fff; color: #678071; display: grid; place-items: center; cursor: pointer; }
+.clear-chat-button:disabled { opacity: .45; cursor: not-allowed; }
+.chat-header { gap: 12px; }
+.chat-messages { scroll-behavior: smooth; overflow-anchor: auto; }
+.voice-select { min-width: 88px; width: auto; max-width: 118px; border-radius: 999px; padding: 6px 26px 6px 12px; font-weight: 600; }
+
+/* Consistent restored landing-page hero across all public routes */
+.public-site{min-height:100vh;background:#fff;color:#164c3e;font-family:'Hind Siliguri',sans-serif}
+/* No public English toggle styles. */
+.public-site.bengali-mode,.public-site.bengali-mode *{font-family:'Hind Siliguri',sans-serif!important}
+.public-header{min-height:96px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px clamp(18px,5vw,88px);background:#fff;border:0}
+.public-brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#123f35;flex-shrink:0}
+.public-brand .brand-logo{width:58px;height:58px;object-fit:contain}
+.public-brand span{display:grid;line-height:1.25}.public-brand b{font-size:25px;font-weight:800}.public-brand small{font-size:13px;color:#72847b}
+.public-links{display:flex;align-items:center;justify-content:center;gap:clamp(14px,2.5vw,38px);flex:1}
+.public-links a{font-size:17px;color:#536e64;text-decoration:none;font-weight:700;white-space:nowrap}.public-links a:hover{color:#07543f}
+/* Public language toggle removed: the website is Bengali-only. */
+
+.public-login{padding:11px 23px;border:1px solid #d1e1d8;border-radius:30px;background:#fff;color:#155641;text-decoration:none;font-size:16px;font-weight:700;white-space:nowrap}
+.public-hero{position:relative;isolation:isolate;overflow:hidden;max-width:none;min-height:530px;margin:18px clamp(14px,2.2vw,36px) 28px;padding:clamp(38px,5.2vw,82px);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);align-items:center;gap:28px;background:#eaf4ee;border:1px solid #d8e9df;border-radius:34px}
+.public-hero:before{content:"";position:absolute;z-index:-1;width:500px;height:500px;border-radius:50%;background:#d6eae0;top:-300px;right:9%}
+.public-hero-copy{max-width:820px}.public-hero .eyebrow{display:inline-flex;align-items:center;padding:10px 16px;border-radius:30px;background:#d8ece1;color:#145a45;font-size:16px;font-weight:700}
+.public-hero h1{max-width:800px;margin:20px 0;color:#104d3d;font-size:clamp(40px,5.2vw,76px);font-weight:800;line-height:1.18;letter-spacing:-1.2px}
+.public-hero p{max-width:760px;margin:0;color:#536e63;font-size:clamp(17px,1.45vw,22px);line-height:1.85}
+.public-cta{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}.public-cta a{min-height:60px;display:inline-flex;align-items:center;justify-content:center;padding:0 25px;border-radius:14px;font-size:17px;font-weight:700;text-decoration:none}
+.public-cta .button.primary{background:#07543f;color:#fff;border:1px solid #07543f}.public-cta .button.secondary{background:#fff;color:#155641;border:1px solid #d7e5dd}
+.practice-art{position:relative;min-height:360px;display:grid;place-items:center}.practice-orbit{position:absolute;width:320px;height:320px;border:1px solid #c8ded2;border-radius:50%}.orbit-two{width:265px;height:265px}
+.practice-card{position:relative;z-index:1;width:min(300px,86%);min-height:235px;padding:29px;background:#fff;border-radius:27px;box-shadow:0 22px 55px rgba(30,83,62,.10);transform:rotate(-4deg);display:flex;flex-direction:column;justify-content:center;gap:13px}
+.practice-label{font-size:14px;color:#7b9186;font-weight:700}.practice-card strong{font-family:'Poppins',sans-serif!important;color:#07543f;font-size:clamp(23px,2.3vw,30px);letter-spacing:-.8px}.practice-card p{font-size:17px;line-height:1.4;margin:0;color:#668276}.practice-card small{align-self:flex-start;margin-top:6px;padding:9px 13px;border-radius:22px;background:#edf6f0;color:#1a6a50;font-size:13px;font-weight:700}
+.practice-aa{position:absolute;right:5%;bottom:2%;font-family:'Poppins',sans-serif!important;font-size:38px;font-weight:800;color:#16836a;transform:rotate(8deg)}
+.public-features{max-width:1400px;margin:32px auto 65px;padding:0 clamp(18px,3vw,48px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.public-features article{padding:24px 26px;background:#fff;border:1px solid #e1ece5;border-radius:19px}.public-features h2{margin:0 0 8px;color:#155641;font-size:20px}.public-features p{margin:0;color:#64796e;line-height:1.8;font-size:15px}.public-footer{border-top:1px solid #e7eee9;text-align:center;padding:26px;color:#71847a}
+@media(max-width:900px){.public-header{flex-wrap:wrap}.public-links{order:4;flex-basis:100%;justify-content:center}.public-hero{grid-template-columns:1fr;min-height:auto;padding:42px}.practice-art{min-height:310px}}
+@media(max-width:620px){.public-header{gap:10px;padding:10px 14px}.public-brand .brand-logo{width:48px;height:48px}.public-brand b{font-size:21px}.public-links{justify-content:flex-start;overflow-x:auto;gap:20px;padding:8px 0}.public-links a{font-size:14px}.public-login{padding:9px 13px;font-size:14px}.public-hero{margin:12px 10px 20px;padding:30px 20px;border-radius:24px;gap:5px}.public-hero .eyebrow{font-size:13px;padding:8px 11px}.public-hero h1{font-size:clamp(34px,9.6vw,49px);letter-spacing:-.7px}.public-hero p{font-size:16px;line-height:1.8}.public-cta{display:grid;margin-top:22px}.public-cta a{min-height:55px;font-size:15px}.practice-art{min-height:280px}.practice-orbit{width:260px;height:260px}.orbit-two{width:218px;height:218px}.practice-card{min-height:205px;padding:23px;width:245px}.public-features{grid-template-columns:1fr;margin:20px 12px 38px;padding:0}.public-features article{padding:20px}}
+
+
+/* Bengali typography: use Hind Siliguri consistently throughout the app. */
+:root, body, #root, .app-shell, .app-shell *, .public-site, .public-site * {
+  font-family: 'Hind Siliguri', sans-serif !important;
+}
+/* Keep the explicitly selected English public experience in Poppins. */
+/* Public website is Bengali-only. */
+
+/* App-like interaction: prevent page zoom and accidental text selection.
+   Editable fields remain selectable and usable for typing. */
+html, body {
+  touch-action: manipulation;
+  -webkit-text-size-adjust: 100%;
+  overscroll-behavior: none;
+}
+body, #root, #root * {
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none;
+}
+input, textarea, [contenteditable="true"], .composer textarea {
+  -webkit-user-select: text !important;
+  user-select: text !important;
+  -webkit-touch-callout: default;
+  touch-action: manipulation;
+}
+button, a, [role="button"] {
+  touch-action: manipulation;
+}
+
+
+/* Bhashora quality pass: Bengali typography, accessible dark palette, compact mobile chat */
+:lang(bn), [lang="bn"], .app-shell, .app-shell * { font-family: 'Hind Siliguri', sans-serif !important; }
+.app-shell .word-card h2, .app-shell .pronounce, .app-shell .lesson-card .muted { font-family: 'Poppins','Hind Siliguri',sans-serif !important; }
+/* Ensure Bangla glyphs never fall back to the browser default after language toggles. */
+.public-site, .public-site * { font-family:'Hind Siliguri',sans-serif !important; }
+@media(max-width:700px){
+ .help-wrap{display:flex;flex-direction:column;gap:10px;padding-top:4px!important}
+ .help-wrap>.page-title{margin:0 0 4px!important}
+ .help-wrap>.help-banner{display:none!important}
+ .chat-panel{display:flex;flex-direction:column;min-height:calc(100dvh - 160px)}
+ .chat-messages{flex:1;min-height:180px;max-height:calc(100dvh - 300px)!important}
+ .composer{position:sticky;bottom:66px;z-index:4;padding:9px!important;box-shadow:0 -5px 18px rgba(20,50,38,.08)}
+ .composer textarea{min-height:54px!important;max-height:100px}
+ .settings-voice-select{max-width:140px}
+}
+/* Remove the old gold accent from the green mobile navigation. */
+.mobile-nav-item.active{border-bottom-color:transparent!important;box-shadow:inset 0 -3px #176b52!important;color:#176b52!important}
+/* High-contrast dark mode: readable text and controls across every app surface. */
+.dark-mode{background:#101d18!important;color:#edf5ef!important}
+.dark-mode .topbar,.dark-mode .sidebar,.dark-mode .task-card,.dark-mode .progress-card,.dark-mode .lesson-row,.dark-mode .lesson-card,.dark-mode .game-card,.dark-mode .chat-panel,.dark-mode .stat-card,.dark-mode .progress-detail,.dark-mode .settings-list,.dark-mode .composer,.dark-mode .chat-header{background:#1b2c24!important;border-color:#385044!important;color:#edf5ef!important}
+.dark-mode .main-content,.dark-mode .page-wrap,.dark-mode .setting-row,.dark-mode .lesson-info,.dark-mode .bubble,.dark-mode .chat-messages{color:#edf5ef!important}
+.dark-mode p,.dark-mode small,.dark-mode .muted,.dark-mode .page-title p,.dark-mode .lesson-info small,.dark-mode .setting-row small,.dark-mode .gentle-tip{color:#c4d5ca!important}
+.dark-mode h1,.dark-mode h2,.dark-mode h3,.dark-mode b,.dark-mode .page-title h1,.dark-mode .section-heading h2,.dark-mode .brand b{color:#f4faf5!important}
+.dark-mode .word-card,.dark-mode .gentle-tip,.dark-mode .side-note,.dark-mode .help-banner,.dark-mode .kind-note{background:#263d31!important;border-color:#45604f!important;color:#edf5ef!important}
+.dark-mode .bubble{background:#263b30!important;color:#f1f7f2!important}
+.dark-mode .message.user .bubble{background:#21483b!important;color:#f5fbf6!important}
+.dark-mode input,.dark-mode textarea,.dark-mode select,.dark-mode .voice-select{background:#14231c!important;color:#f2f8f3!important;border-color:#496253!important}
+.dark-mode .mobile-nav{background:#172820!important;border-color:#385044!important}
+.dark-mode .mobile-nav-item{color:#c6d7cc!important}.dark-mode .mobile-nav-item.active{color:#8de0b5!important;box-shadow:inset 0 -3px #25845c!important}
+.dark-mode .nav-item{color:#d4e1d8!important}.dark-mode .nav-item.active{background:#254b39!important;color:#ffffff!important}
+/* Keep sign-in brand and return-home links on separate visual rows on narrow screens. */
+@media(max-width:480px){.auth-header,.auth-top,.auth-links,.auth-brand-row{flex-wrap:wrap!important;gap:12px!important}.auth-header a,.auth-top a{display:inline-flex;margin:4px 8px 4px 0}}
+
+
+/* Bengali-first site-wide typography */
+html[lang=bn], html[lang=bn] body, html[lang=bn] #root, html[lang=bn] #root * { font-family: 'Hind Siliguri', sans-serif !important; }
+input, textarea, select, button { font-family: 'Hind Siliguri', sans-serif; }

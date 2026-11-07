@@ -21,7 +21,31 @@ export const lessons = [
             { en: 'I have a question.', bn: 'আমার একটি প্রশ্ন আছে।', say: 'আই হ্যাভ আ কোয়েশ্চন' },
             { en: 'Please speak slowly.', bn: 'দয়া করে ধীরে কথা বলুন।', say: 'প্লিজ স্পিক স্লোলি' },
             { en: 'I do not understand.', bn: 'আমি বুঝতে পারছি না।', say: 'আই ডু নট আন্ডারস্ট্যান্ড' }
-        ] }
+        ] },
+    { id: 5, title: 'সময় ও দিন', subtitle: 'Time and days', icon: UserRound, color: 'mint', minutes: 6, words: [
+        { en: 'What time is it?', bn: 'এখন কয়টা বাজে?', say: 'হোয়াট টাইম ইজ ইট' },
+        { en: 'Today is Monday.', bn: 'আজ সোমবার।', say: 'টুডে ইজ মানডে' },
+        { en: 'See you tomorrow.', bn: 'আগামীকাল দেখা হবে।', say: 'সি ইউ টুমরো' },
+        { en: 'I am late.', bn: 'আমার দেরি হয়ে গেছে।', say: 'আই অ্যাম লেইট' }
+    ] },
+    { id: 6, title: 'যাতায়াত', subtitle: 'Travel and transport', icon: ShoppingBag, color: 'blue', minutes: 7, words: [
+        { en: 'Where is the bus stop?', bn: 'বাসস্টপ কোথায়?', say: 'হোয়্যার ইজ দ্য বাস স্টপ' },
+        { en: 'I need a ticket.', bn: 'আমার একটি টিকিট দরকার।', say: 'আই নিড আ টিকিট' },
+        { en: 'Please stop here.', bn: 'দয়া করে এখানে থামুন।', say: 'প্লিজ স্টপ হিয়ার' },
+        { en: 'How far is it?', bn: 'এটি কত দূরে?', say: 'হাউ ফার ইজ ইট' }
+    ] },
+    { id: 7, title: 'রেস্টুরেন্টে', subtitle: 'At a restaurant', icon: Users, color: 'peach', minutes: 6, words: [
+        { en: 'A glass of water, please.', bn: 'দয়া করে এক গ্লাস পানি দিন।', say: 'আ গ্লাস অভ ওয়াটার প্লিজ' },
+        { en: 'I would like rice.', bn: 'আমি ভাত চাই।', say: 'আই উড লাইক রাইস' },
+        { en: 'The food is delicious.', bn: 'খাবারটি সুস্বাদু।', say: 'দ্য ফুড ইজ ডিলিশাস' },
+        { en: 'Can I have the bill?', bn: 'আমি কি বিল পেতে পারি?', say: 'ক্যান আই হ্যাভ দ্য বিল' }
+    ] },
+    { id: 8, title: 'দৈনন্দিন প্রয়োজন', subtitle: 'Everyday needs', icon: Stethoscope, color: 'lilac', minutes: 6, words: [
+        { en: 'I am thirsty.', bn: 'আমার পিপাসা পেয়েছে।', say: 'আই অ্যাম থার্স্টি' },
+        { en: 'I need some rest.', bn: 'আমার একটু বিশ্রাম দরকার।', say: 'আই নিড সাম রেস্ট' },
+        { en: 'Please call me.', bn: 'দয়া করে আমাকে ফোন করুন।', say: 'প্লিজ কল মি' },
+        { en: 'I will be back soon.', bn: 'আমি শিগগিরই ফিরে আসব।', say: 'আই উইল বি ব্যাক সুন' }
+    ] }
 ];
 export const games = [
     { question: '“ধন্যবাদ” ইংরেজিতে কী?', options: ['Sorry', 'Thank you', 'Goodbye'], answer: 'Thank you', explain: 'Thank you মানে ধন্যবাদ।' },

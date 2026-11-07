@@ -77,5 +77,3 @@ https://firebase.google.com/docs/ai-logic/error-codes
 ## Typography and design
 
 English text uses Poppins. Bengali glyphs fall back to Hind Siliguri (the earlier Bengali font). The visual system uses solid navy, teal, gold and warm off-white colours; navigation uses a slim teal active indicator rather than a gold pill.
-#   b h a s h o r a  
- 
