@@ -3,4 +3,5 @@ Allow: /
 Disallow: /app
 Disallow: /login
 
-Sitemap: https://bhashora-learn.web.app/sitemap.xml
+Sitemap: https://bhashora.vercel.app/
+sitemap.xml
