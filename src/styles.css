@@ -674,3 +674,11 @@ button, a, [role="button"] {
 /* Bengali-first site-wide typography */
 html[lang=bn], html[lang=bn] body, html[lang=bn] #root, html[lang=bn] #root * { font-family: 'Hind Siliguri', sans-serif !important; }
 input, textarea, select, button { font-family: 'Hind Siliguri', sans-serif; }
+
+/* Practical example sentences inside each vocabulary card */
+.word-examples{margin-top:22px;padding:18px 20px;background:var(--surface-soft,rgba(127,127,127,.07));border:1px solid var(--border,rgba(127,127,127,.16));border-radius:16px}
+.word-examples h3{font-size:1rem;margin:0 0 12px;color:var(--text)}
+.word-examples ol{margin:0;padding-left:22px;display:grid;gap:12px}
+.word-examples li{padding-left:4px;line-height:1.5}
+.word-examples li b{display:block;font-size:.98rem;font-weight:650}
+.word-examples li small{display:block;margin-top:3px;color:var(--muted);font-size:.88rem}

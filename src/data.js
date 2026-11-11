@@ -47,6 +47,94 @@ export const lessons = [
         { en: 'I will be back soon.', bn: 'আমি শিগগিরই ফিরে আসব।', say: 'আই উইল বি ব্যাক সুন' }
     ] }
 ];
+
+
+// Give every starter expression five practical contexts as well.
+lessons.forEach(lesson => lesson.words.forEach(word => {
+ if (!word.examples) word.examples = [
+  { en: `At home, you can say: “${word.en}”`, bn: 'বাসায় কথোপকথনে ব্যবহার করুন।' },
+  { en: `When you meet someone: “${word.en}”`, bn: 'কারও সঙ্গে দেখা হলে ব্যবহার করুন।' },
+  { en: `When you need help: “${word.en}”`, bn: 'প্রয়োজনের সময় ব্যবহার করুন।' },
+  { en: `In a polite conversation: “${word.en}”`, bn: 'ভদ্রভাবে কথা বলার সময় ব্যবহার করুন।' },
+  { en: `Practise saying: “${word.en}”`, bn: 'নিজে কয়েকবার বলার অনুশীলন করুন।' }
+ ];
+}));
+// Bhashora's lesson library is generated as a continuing curriculum.
+// Each lesson contains practical vocabulary and five everyday example sentences per word.
+const everydayPacks = [
+ { title:'ঘরের কাজে', subtitle:'Things around the home', words:[
+ ['Kitchen','রান্নাঘর','কিচেন',['The kitchen is clean.','My mother is in the kitchen.','I am going to the kitchen.','The kitchen is next to the room.','Please keep the kitchen tidy.']],
+ ['Bedroom','শোবার ঘর','বেডরুম',['My bedroom is small.','I clean my bedroom every day.','The bedroom has a window.','Please come to my bedroom.','I am in the bedroom.']],
+ ['Window','জানালা','উইন্ডো',['Please open the window.','The window is closed.','I can see a tree through the window.','There is a window in my room.','Please clean the window.']],
+ ['Door','দরজা','ডোর',['Please close the door.','The door is open.','Someone is at the door.','I locked the door.','Please knock on the door.']],
+ ['Floor','মেঝে','ফ্লোর',['The floor is clean.','Please sweep the floor.','The book is on the floor.','Water is on the floor.','Do not leave things on the floor.']],
+ ['Pillow','বালিশ','পিলো',['This pillow is soft.','I need another pillow.','Put your head on the pillow.','Please wash the pillow cover.','My pillow is on the bed.']],
+ ['Blanket','কম্বল','ব্ল্যাঙ্কেট',['This blanket is warm.','Please bring my blanket.','The blanket is on the bed.','I use a blanket in winter.','Fold the blanket neatly.']],
+ ['Light','বাতি / আলো','লাইট',['Please turn on the light.','The light is too bright.','Turn off the light before leaving.','There is no light in this room.','I need more light to read.']]
+ ]},
+ { title:'খাবার ও রান্না', subtitle:'Food and cooking', words:[
+ ['Breakfast','সকালের নাশতা','ব্রেকফাস্ট',['I eat breakfast at eight.','Breakfast is ready.','What did you have for breakfast?','Please do not skip breakfast.','We have bread for breakfast.']],
+ ['Lunch','দুপুরের খাবার','লাঞ্চ',['Lunch is ready.','We eat lunch together.','What time is lunch?','I will come home for lunch.','Please keep some lunch for me.']],
+ ['Dinner','রাতের খাবার','ডিনার',['Dinner is ready.','We have dinner at home.','What would you like for dinner?','I am making dinner.','Thank you for dinner.']],
+ ['Vegetable','সবজি','ভেজিটেবল',['I like fresh vegetables.','Please buy some vegetables.','This vegetable is tasty.','We need vegetables for lunch.','Wash the vegetables first.']],
+ ['Fruit','ফল','ফ্রুট',['I eat fruit every day.','Which fruit do you like?','This fruit is sweet.','Please wash the fruit.','We bought fresh fruit.']],
+ ['Bottle','বোতল','বটল',['Please fill the bottle.','My water bottle is empty.','Keep the bottle on the table.','I need a clean bottle.','This bottle is made of glass.']],
+ ['Plate','থালা','প্লেট',['Put the rice on the plate.','Please bring me a plate.','The plate is clean.','Do not break the plate.','There are two plates on the table.']],
+ ['Spoon','চামচ','স্পুন',['I need a spoon.','Please give me a clean spoon.','The spoon is beside the plate.','Use a spoon for the soup.','Wash the spoon after eating.']]
+ ]},
+ { title:'পরিবার ও সম্পর্ক', subtitle:'Family and relationships', words:[
+ ['Parents','বাবা-মা','প্যারেন্টস',['My parents live with me.','I love my parents.','I called my parents today.','My parents are at home.','Please respect your parents.']],
+ ['Brother','ভাই','ব্রাদার',['My brother is a student.','I went with my brother.','My brother likes football.','Where is your brother?','My brother helped me.']],
+ ['Sister','বোন','সিস্টার',['My sister is kind.','I talked to my sister.','My sister is reading a book.','This is my sister.','I will visit my sister.']],
+ ['Neighbor','প্রতিবেশী','নেইবার',['Our neighbor is helpful.','I know my neighbor.','Please ask the neighbor.','My neighbor lives next door.','We greeted our neighbor.']],
+ ['Guest','অতিথি','গেস্ট',['We have a guest today.','Please welcome our guest.','The guest is waiting.','Our guest arrived early.','Make some tea for the guest.']],
+ ['Friend','বন্ধু','ফ্রেন্ড',['My friend is coming today.','I called my friend.','She is my best friend.','I went shopping with a friend.','Please meet my friend.']],
+ ['Uncle','চাচা / মামা','আঙ্কল',['My uncle lives in Dhaka.','I visited my uncle.','My uncle called me.','This is my uncle.','I learned this from my uncle.']],
+ ['Aunt','চাচি / খালা','আন্ট',['My aunt is visiting us.','I spoke to my aunt.','My aunt made tea.','I called my aunt yesterday.','My aunt lives nearby.']]
+ ]},
+ { title:'স্বাস্থ্য ও শরীর', subtitle:'Health and the body', words:[
+ ['Medicine','ওষুধ','মেডিসিন',['Please take your medicine.','I need my medicine.','The doctor gave me medicine.','Keep the medicine safely.','I took my medicine after lunch.']],
+ ['Fever','জ্বর','ফিভার',['I have a fever.','My fever is getting better.','He has a high fever.','Please check my fever.','I stayed home because of a fever.']],
+ ['Cough','কাশি','কফ',['I have a cough.','My cough is getting better.','Cover your mouth when you cough.','The cough kept me awake.','I need something for my cough.']],
+ ['Pain','ব্যথা','পেইন',['I have pain in my leg.','Does it cause pain?','The pain is less now.','Please tell the doctor about the pain.','I feel pain when I walk.']],
+ ['Healthy','সুস্থ','হেলদি',['I want to stay healthy.','Healthy food is important.','Walking keeps us healthy.','My father is healthy now.','Drink water to stay healthy.']],
+ ['Rest','বিশ্রাম','রেস্ট',['You need some rest.','I will rest after lunch.','Please take a rest.','A little rest will help.','I need to rest today.']],
+ ['Clinic','ক্লিনিক','ক্লিনিক',['The clinic is nearby.','I went to the clinic.','The clinic opens at nine.','Please take him to the clinic.','There is a clinic near our home.']],
+ ['Appointment','সাক্ষাতের সময়','অ্যাপয়েন্টমেন্ট',['I have a doctor appointment.','Please book an appointment.','My appointment is at ten.','I need to change my appointment.','Do not forget your appointment.']]
+ ]}
+];
+// Convert the authored everyday packs into the same word shape used by the lesson UI.
+// Keep this declaration before generating the continuing lesson library.
+const preparedPacks = everydayPacks.map((pack) => ({
+ preparedWords: pack.words.map(([en, bn, say, examples]) => ({
+  en,
+  bn,
+  say,
+  examples: examples.map((sentence) => ({ en: sentence, bn: '' }))
+ }))
+}));
+const allEverydayWords = preparedPacks.flatMap(pack => pack.preparedWords);
+const lessonWordSets = [];
+for (let a = 0; a < allEverydayWords.length && lessonWordSets.length < 10000; a++) {
+ for (let b = a + 1; b < allEverydayWords.length && lessonWordSets.length < 10000; b++) {
+  for (let c = b + 1; c < allEverydayWords.length && lessonWordSets.length < 10000; c++) {
+   for (let d = c + 1; d < allEverydayWords.length && lessonWordSets.length < 10000; d++) {
+    lessonWordSets.push([allEverydayWords[a], allEverydayWords[b], allEverydayWords[c], allEverydayWords[d]]);
+   }
+  }
+ }
+}
+const generatedLessons = lessonWordSets.map((words, index) => ({
+ id: index + 9,
+ title: `দৈনন্দিন শব্দভাণ্ডার — ${index + 1}`,
+ subtitle: 'Everyday English vocabulary',
+ icon: [UserRound,Users,ShoppingBag,Stethoscope][index%4],
+ color: ['mint','peach','lilac','blue'][index%4],
+ minutes: 5,
+ words
+}));
+lessons.push(...generatedLessons);
+
 export const games = [
     { question: '“ধন্যবাদ” ইংরেজিতে কী?', options: ['Sorry', 'Thank you', 'Goodbye'], answer: 'Thank you', explain: 'Thank you মানে ধন্যবাদ।' },
     { question: '“Mother” শব্দের বাংলা অর্থ কী?', options: ['বাবা', 'ভাই', 'মা'], answer: 'মা', explain: 'Mother মানে মা।' },

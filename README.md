@@ -77,3 +77,28 @@ https://firebase.google.com/docs/ai-logic/error-codes
 ## Typography and design
 
 English text uses Poppins. Bengali glyphs fall back to Hind Siliguri (the earlier Bengali font). The visual system uses solid navy, teal, gold and warm off-white colours; navigation uses a slim teal active indicator rather than a gold pill.
+
+
+## নতুন ধারাবাহিক পাঠ (২০২৬ আপডেট)
+
+- শেখার তালিকায় একসঙ্গে পরবর্তী ৩০টি অসম্পন্ন পাঠ দেখানো হয়; পাঠ শেষ হলে পরের অসম্পন্ন পাঠটি সঙ্গে সঙ্গে শুরু হয়।
+- শেষ করা পাঠগুলো `Past lessons` পাতায় সংরক্ষিত থাকে এবং সেখান থেকে আবার অনুশীলন করা যায়।
+- প্রতিটি শব্দের সঙ্গে দৈনন্দিন জীবনে ব্যবহারযোগ্য পাঁচটি উদাহরণ যোগ করা হয়েছে।
+- প্রাথমিক আটটি পাঠের পর আরও ১০,০০০টি আলাদা শব্দ-সমন্বয়ের পাঠ তৈরি হয়। ফলে ৫০০টি পাঠ শেষ করলেও পরের পাঠ পাওয়া যাবে।
+- সম্পন্ন পাঠের তালিকা আগের মতোই সাইন-ইন করা ব্যবহারকারীর Firestore `users/{uid}/appData/main` নথিতে সংরক্ষিত হয়।
+
+### আপডেট প্রকাশ
+
+এই ZIP-এ source code আছে; আগের `dist` build বাদ দেওয়া হয়েছে যাতে পুরোনো অ্যাপ build নতুন source-কে ঢেকে না দেয়।
+
+```bash
+npm ci
+npm run build
+firebase deploy --only hosting
+```
+
+আগের মতোই Firebase project এবং `.env` configuration ব্যবহার করুন। Firestore-এর existing user progress মুছে ফেলার প্রয়োজন নেই।
+
+## Fix note (2026-11-11)
+- Fixed the lesson-library startup crash by defining `preparedPacks` from the authored `everydayPacks` before generating the continuing lesson list.
+- If Firebase App Check shows `403 exchangeDebugToken` during local development, register the exact debug token printed in the browser console at Firebase Console → App Check → Apps → your Web app → Manage debug tokens. This is separate from the `preparedPacks` JavaScript crash. Do not publish or share the debug token.
